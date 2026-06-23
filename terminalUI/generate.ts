@@ -1,6 +1,7 @@
 import { select, isCancel } from "@clack/prompts";
 import chalk from "chalk";
 import figlet from "figlet";
+import { runCliMode } from "../modes/cliMode";
 
 const BANNER_FONT = 'ANSI Shadow';
 const Shadow = chalk.hex('#1c09f5');
@@ -36,17 +37,18 @@ export async function generate() {
     options: [
       { value: "cli", label: "CLI" },
       { value: "telegram", label: "Telegram Bot" },
+      { value: "cancel", label: "Cancel" }
     ],
   })
 
-  if (isCancel(mode)) {
-    console.log(chalk.red("Operation cancelled."));
+  if (isCancel(mode) || mode === "cancel") {
+    console.log(chalk.red("\n Good Bye. \n"));
     return;
   }
-  if (mode === "cli") {
-    console.log(chalk.green("You chose CLI mode!"));
+  else if (mode === "cli") {
+    await runCliMode();
   }
-  else {
+  else if (mode === "telegram") {
     console.log(chalk.green("You chose Telegram Bot mode!"));
   }
 }
