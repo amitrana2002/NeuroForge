@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import { select, isCancel } from "@clack/prompts";
 import { runAgentMode } from "./agentMode/orchestrator";
+import { runAskMode } from "./ask/orchestrator";
 
 export async function runCliMode() {
   while (true) {
@@ -31,7 +32,8 @@ export async function runCliMode() {
         console.log(chalk.green("You chose Plan Mode!"));
         break;
       case "ask":
-        console.log(chalk.green("You chose Ask Mode!"));
+        // console.log(chalk.green("You chose Ask Mode!"));
+        await runAskMode();
         break;
       default:
         console.log(chalk.red("Invalid option. Please try again."));
