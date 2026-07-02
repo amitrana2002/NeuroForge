@@ -8,6 +8,7 @@ import { ToolExecuter } from '../agentMode/toolExecuter';
 import { defaultAgentConfig } from '../agentMode/types';
 import { renderTerminalMarkdown } from '../../terminalUI/terminal_md';
 import { runApprovalFlow } from '../agentMode/approval';
+import { createWebTools } from '../plan/web-tools.ts';
 
 function createAskTools(executor: ToolExecuter) {
   return {
@@ -84,12 +85,10 @@ export async function runAskMode() {
   const tracker = new ActionTracker();
   const executor = new ToolExecuter(tracker, config);
 
-  //to do web tool agent - we will use firecrawl
-
 
   const tools = {
     ...createAskTools(executor),
-    // ...createWebTools(tracker)
+    ...createWebTools(tracker)
   };
 
   const agent = new ToolLoopAgent({
