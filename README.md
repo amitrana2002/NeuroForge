@@ -6,12 +6,6 @@
 
 *Build • Plan • Analyze • Automate*
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![OpenRouter](https://img.shields.io/badge/OpenRouter-AI-blue?style=for-the-badge)
-![AI SDK](https://img.shields.io/badge/AI_SDK-Agent-orange?style=for-the-badge)
-![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram)
-
 *A modular AI coding assistant inspired by modern software engineering agents like Claude Code, OpenClaw, Cursor, and Codex CLI.*
 
 </div>
@@ -138,29 +132,29 @@ Built using **Telegraf**, the Telegram interface provides the same AI capabiliti
           └───────────┬───────────┘
                       │
                Mode Selection
-      ┌─────────┬──────────┬──────────┐
-      ▼         ▼          ▼
-    Ask       Plan       Agent
-      │         │          │
-      └─────────┴──────────┘
-                │
-        ToolLoopAgent (AI SDK)
-                │
-      ┌─────────┼──────────────┐
-      ▼         ▼              ▼
- File Tools  Web Tools   Code Analysis
-                │
-                ▼
-          Tool Executor
-                │
-                ▼
-         Action Tracker
-                │
-                ▼
-       Approval Workflow
-                │
-                ▼
-         Apply Changes
+            ┌─────────┬──────────┬
+            ▼         ▼          ▼
+          Ask       Agent       Plan
+            │         │          │
+            └─────────┴──────────┘
+                      │
+              ToolLoopAgent (AI SDK)
+                      │
+            ┌─────────┼──────────────┐
+            ▼         ▼              ▼
+      File Tools  Web Tools   Code Analysis
+                      │
+                      ▼
+                Tool Executor
+                      │
+                      ▼
+              Action Tracker
+                      │
+                      ▼
+            Approval Workflow
+                      │
+                      ▼
+              Apply Changes
 ```
 
 ---
